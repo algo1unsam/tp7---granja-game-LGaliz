@@ -12,19 +12,19 @@ object hector {
 
 	method sembrarMaiz() {
 		if(self.validacion()){
-		game.addVisual(new Maiz(position = position))
+			game.addVisual(new Maiz(position = position))
 		}
 	}
 
 	method sembrarTrigo() {
 		if(self.validacion()){	
-		game.addVisual(new Trigo(position = position))
+			game.addVisual(new Trigo(position = position))
 		}
 	}
 
 	method sembrarTomaco() {
 		if(self.validacion()){
-		game.addVisual(new Tomaco(position = position))
+			game.addVisual(new Tomaco(position = position))
 		}
 	}
 
