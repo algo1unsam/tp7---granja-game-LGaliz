@@ -13,7 +13,6 @@ program farmville {
 	//  VISUALES
 	config.iniciar()
 
- 	
  	//  COMIENZA
 	game.start()
 }

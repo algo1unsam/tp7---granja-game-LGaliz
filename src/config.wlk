@@ -12,10 +12,10 @@ object config {
 		game.onTick(1000, "REGADOR", { regador.regarCultivosAlrededor()})
 	// game.addVisualIn(new Regador(position =  game.center()), game.center())
 	// game.addVisualIn(new Maiz(), game.at(1, 1))
-	// game.onTick(5000, 'Rega', )
 	}
 
 	method configurarTeclas() {
+	//	keyboard.f().onPressDo{ hector.sembrar(new Maiz(position = hector.position()))} // este SI FUNCA al final =)
 		keyboard.m().onPressDo{ hector.sembrarMaiz()}
 		keyboard.t().onPressDo{ hector.sembrarTrigo()}
 		keyboard.o().onPressDo{ hector.sembrarTomaco()}

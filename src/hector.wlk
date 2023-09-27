@@ -2,7 +2,6 @@ import wollok.game.*
 import cultivos.*
 
 object hector {
-
 	var property position = new Position(x = 3, y = 3)
 	const property image = "player.png"
 	const property cultivos = []
@@ -10,6 +9,11 @@ object hector {
 
 	method validacion() = game.colliders(self).isEmpty()
 
+	method sembrar(planta) {
+		if(self.validacion()){
+			game.addVisual(planta)
+		}
+	}
 	method sembrarMaiz() {
 		if(self.validacion()){
 			game.addVisual(new Maiz(position = position))
@@ -56,11 +60,9 @@ object hector {
 	method informe() {
 		game.say(self, "Tengo " + oro + " morlacos, y " + cultivos.size() + " plantas para vender")
 	}
-
 }
 
 class Regador {
-
 	const property position = game.center()
 	const property image = "aspersor.png"
 
@@ -72,13 +74,11 @@ class Regador {
 		self.cultivosAlrededor().forEach({ cultivo => cultivo.regada()})
 	}
 
-	method cultivosAlrededor() = self.posicionesAlrededor().flatMap({ posicion => posicion.allElements() })
-
+	//method cultivosAlrededor() = self.posicionesAlrededor().flatMap({ posicion => posicion.allElements() })
+	method cultivosAlrededor() = self.posicionesAlrededor().flatMap({ posicion => game.getObjectsIn(posicion)})
 	method laterales() = [ position.up(1), position.left(1), position.down(1), position.right(1) ]
-
 	method esquinas() = [ position.up(1).left(1), position.up(1).right(1), position.down(1).left(1), position.down(1).right(1) ]
 
 	method posicionesAlrededor() = self.laterales() + self.esquinas()
-
 }
 
