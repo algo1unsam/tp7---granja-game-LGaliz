@@ -15,7 +15,7 @@ object config {
 	}
 
 	method configurarTeclas() {
-	//	keyboard.f().onPressDo{ hector.sembrar(new Maiz(position = hector.position()))} // este SI FUNCA al final =)
+	//	keyboard.f().onPressDo{ hector.sembrar(new Maiz(position = hector.position()))} // USAR ESTA OPCION
 		keyboard.m().onPressDo{ hector.sembrarMaiz()}
 		keyboard.t().onPressDo{ hector.sembrarTrigo()}
 		keyboard.o().onPressDo{ hector.sembrarTomaco()}
